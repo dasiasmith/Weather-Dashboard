@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+
+.jumbotron{
+    text-align: center;
+    padding: 0px;
+    background-image: linear-gradient(to right, blue,rgb(37, 10, 87));
+    color: white;
+}
+
+.card {
+    padding: 10px;
+}
+
+.oneDay {
+    font-weight: bold;
+}
+
+aside {
+    float: right;
+}
+
+.good {
+    background-color: green;
+    color: white
+}
+
+.bad {
+    background-color: yellow;
+    color: black;
+}
+
+.ugly {
+    background-color: rgb(141, 31, 31);
+    color: white;
+}
+
+.col-md-2 {
+    border: gray;
+}

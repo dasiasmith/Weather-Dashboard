@@ -9,32 +9,35 @@
     <link rel="stylesheet" href="Assets/style.css"/>
     <title>Weather Dashboard</title>
 </head>
-<body class="flex-column min-100-vh">
-    <header class="hero">
+<body>
+    <header class="jumbotron">
         <h1 class="title">Weather Dashboard</h1>
     </header>
 
-    <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-3">
-
-            <div class="card">
+    <main class="container-fluid">
+        <div class= "row">
+            <div class="col-12 col-md-3">
                 <h3 class="card-header text-uppercse">Search for a City</h3>
-                <form id="city-form" class="card-body">
+                <form id="city-form" class="input-group">
                     <input name="city" id="city" type="text" placeholder="Enter City Here" autofocus="true" class="form-input"/>
-                    <button type="submit" class="btn">Search</button>
+                    <button id="searchButt" type="submit" class="btn btn-primary btn-block">Search</button>
                 </form>
-                <div id="citiesList"></div>
+                <div>
+                    <ul id="citiesList" class="list-group"></ul>
+                </div> 
             </div>
         </div>
 
-        <div class="col-12 col-md-9">
+        <div class="col-lg-9">
             <div id="dayForecast"></div>
                 <h2 class="dayHeading"><span id="oneDay"></span></h2>
                 <div id="dayGroup" class="dayDetails"></div>
             </div>
             <div>
                 <h2 id="fiveHeading"></h2>
-                <div id="fiveForecast" class="row">
+                <div id="fiveForecast"> 
+                    <div id="fiveCard" class="row">
+                    </div>    
                 </div>
             </div> 
         </div>
