@@ -1,3 +1,4 @@
+//URL and API variables (unused)
 var apiUrl = 'api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}';
 var apiKey = 'b16d1a940a0bfae041e89cabfa2d0485';
 var today = moment().format('L');
@@ -17,6 +18,7 @@ var uv = document.createElement("p");
 
 var searchHistory = [];
 
+//Retrieve user search history and store in local storage
 function getHistory() {
     var localStor = localStorage.getItem("name")
     if (localStor) {
@@ -39,6 +41,7 @@ function dayData(city) {
                     localStorage.setItem("name", JSON.stringify(searchHistory));
                     getHistory()
                 }
+                //Create div within page for the day information and group temp, wind, humidity, and UV to card
 
                 var cityDate = document.createElement("div");
                 var pic = document.createElement("img")
@@ -75,7 +78,7 @@ function dayData(city) {
         alert("Error " + error.statusText)
     })
 }
-
+//Gather UV data from API, create conditionals for UV button which is styled on CSS
 function uvData(lat, lon) {
     fetch('https://api.openweathermap.org/data/2.5/uvi?appid=b16d1a940a0bfae041e89cabfa2d0485&lat=' + lat + '&lon=' + lon)
     .then(function (response) {
@@ -107,7 +110,7 @@ function uvData(lat, lon) {
         alert("Error " + error.statusText)
     })
 }
-
+//Using forecast API to fetch five-day forecaSwt
 function getFiveDay(city) {
     fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=b16d1a940a0bfae041e89cabfa2d0485')
     .then(function (response) {
@@ -120,6 +123,7 @@ function getFiveDay(city) {
                 fiveTitle.textContent = "5-Day Forecaset:"
                 fiveHeading.appendChild(fiveTitle)
 
+                //Create new elements to append into five-day forecast div
                 for (var i = 6; i < 39; i += 8) {
                     var divEl = document.createElement("div")
                     var fiveImg = document.createElement("img")
@@ -153,14 +157,14 @@ function getFiveDay(city) {
         alert("Error " + error.statusText)
     })
 }
-
+//List cities from past searches. Users can click on history to retrieve data again
 var showList = function(userCity) {
     var inputOne = document.createElement("button")
     inputOne.classList = "list-group-item list-group-item-action";
     inputOne.textContent = userCity;
     citiesList.appendChild(inputOne);
 }
-
+//Event listeners to form history, search button, and city search
 document.getElementById("citiesList").addEventListener("click", function(event) {
     dayData(event.target.textContent);
     getFiveDay(event.target.textContent);
@@ -172,7 +176,8 @@ document.getElementById("searchButt").addEventListener("click", function (event)
     var userCity = document.getElementById("city").value;
     document.getElementById("city").value = "";
     userCity = userCity.toUpperCase();
-
+    
+    //Function calls
     if (userCity) {
         dayData(userCity);
         getFiveDay(userCity);
