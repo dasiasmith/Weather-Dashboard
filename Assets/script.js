@@ -52,6 +52,7 @@ function dayData(city) {
                 cityDate.appendChild(pic)
 
                 oneDay.innerHTML = "";
+                oneDay.classList.add("boldCity")
                 oneDay.appendChild(cityDate);
 
                 dayGroup.innerHTML = "";
@@ -120,7 +121,7 @@ function getFiveDay(city) {
                 var fiveTitle = document.createElement("h2");
                 fiveHeading.textContent = "";
 
-                fiveTitle.textContent = "5-Day Forecaset:"
+                fiveTitle.textContent = "5-Day Forecast:"
                 fiveHeading.appendChild(fiveTitle)
 
                 //Create new elements to append into five-day forecast div

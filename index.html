@@ -14,32 +14,33 @@
         <h1 class="title">Weather Dashboard</h1>
     </header>
 
-    <main class="container-fluid">
+    <main class="container-fluid flex-row" style="max-width: 1400px">
         <div class= "row">
             <div class="col-12 col-md-3">
-                <h3 class="card-header text-uppercse">Search for a City</h3>
-                <form id="city-form" class="input-group">
-                    <input name="city" id="city" type="text" placeholder="Enter City Here" autofocus="true" class="form-input"/>
-                    <button id="searchButt" type="submit" class="btn btn-primary btn-block">Search</button>
+                <form id="city-form">
+                    <div class="input-group">
+                        <h3 class="card-header text-uppercse">Search for a City</h3>
+                        <input name="city" id="city" type="text" placeholder="Enter City Here" autofocus="true" class="form-input"/>
+                        <button id="searchButt" type="submit" class="btn btn-primary btn-block">Search</button>
+                    </div>
                 </form>
                 <div>
                     <ul id="citiesList" class="list-group"></ul>
                 </div> 
             </div>
-        </div>
 
-        <div class="col-lg-9">
-            <div id="dayForecast"></div>
-                <h2 class="dayHeading"><span id="oneDay"></span></h2>
-                <div id="dayGroup" class="dayDetails"></div>
-            </div>
-            <div>
-                <h2 id="fiveHeading"></h2>
-                <div id="fiveForecast"> 
-                    <div id="fiveCard" class="row">
-                    </div>    
+            <div class="col 12 col-md-9">
+                <div id="dayForecast">
+                    <h2 class="dayHeading"><span id="oneDay"></span></h2>
+                    <div id="dayGroup" class="dayDetails"></div>
                 </div>
-            </div> 
+                <div>
+                    <h2 id="fiveHeading"></h2>
+                    <div id="fiveForecast"> 
+                    <div id="fiveCard" class="row"></div>   
+                    </div>
+                </div> 
+            </div>
         </div>
     </main>
     

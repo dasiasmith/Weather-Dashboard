@@ -10,7 +10,7 @@
 }
 
 .card {
-    padding: 10px;
+    padding: 30px 20px;
 }
 
 .oneDay {
@@ -38,4 +38,12 @@ aside {
 
 .col-md-2 {
     border: gray;
+}
+
+.input {
+    width: 40px;
+}
+
+.boldCity {
+    font-weight: bold;
 }
