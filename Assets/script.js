@@ -32,7 +32,7 @@ function getHistory() {
 
 //Weather info for current day
 function dayData(city) {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=b16d1a940a0bfae041e89cabfa2d0485')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=b16d1a940a0bfae041e89cabfa2d0485')
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
@@ -113,7 +113,7 @@ function uvData(lat, lon) {
 }
 //Using forecast API to fetch five-day forecaSwt
 function getFiveDay(city) {
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=b16d1a940a0bfae041e89cabfa2d0485')
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial&appid=b16d1a940a0bfae041e89cabfa2d0485')
     .then(function (response) {
         console.log(response)
         if (response.ok) {
